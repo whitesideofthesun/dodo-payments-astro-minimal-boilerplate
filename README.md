@@ -1,48 +1,46 @@
-# Astro Starter Kit: Basics
+# Astro - Dodo Payments Minimal Boilerplate
 
+A minimal boilerplate to integrate [Dodo Payments](https://dodopayments.com/) with [Astro](https://astro.build/).
+
+## 🚀 Getting Started
+
+Follow these steps to set up and run the project.
+
+### 1️⃣ Clone the Repository
 ```sh
-npm create astro@latest -- --template basics
+git clone https://github.com/your-repo/astro-dodo-boilerplate.git
+cd astro-dodo-boilerplate
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### 2️⃣ Get API Credentials
+Obtain the **API Key** and **Webhook Signing Key** from your Dodo Payments dashboard while in Test Mode:
+- **API Key:** [Get it here](https://app.dodopayments.com/developer/api-keys)
+- **Webhook Key:** [Get it here](https://app.dodopayments.com/developer/webhooks)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+### 3️⃣ Configure Environment Variables
+Create a `.env` file in the root directory (where `.env.example` exists):
+```sh
+touch .env
+```
+Copy the contents from `.env.example` and update the following values with your keys from Dodo Payments:
+```ini
+DODO_API_KEY_TEST=your_api_key_here
+DODO_PAYMENTS_WEBHOOK_KEY=your_webhook_key_here
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+When you are testing webhooks locally, you would expose your localhost to the web using tools similar to [Ngrok](https://ngrok.com/).
+Please add the url provided by ngrok to the allowed_hosts list in astro.config.mjs for the webhooks to be delivered.
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+### 4️⃣ Install Dependencies
+```sh
+npm install
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### 5️⃣ Run the Project
+```sh
+npm run dev
+```
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🎉 You're all set!
+Your Astro project is now configured with Dodo Payments. Happy coding! 🚀
