@@ -8,8 +8,8 @@ Follow these steps to set up and run the project.
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/your-repo/astro-dodo-boilerplate.git
-cd astro-dodo-boilerplate
+git clone https://github.com/whitesideofthesun/dodo-payments-astro-minimal-boilerplate.git
+cd dodo-payments-astro-minimal-boilerplate
 ```
 
 ### 2️⃣ Get API Credentials
